@@ -12,15 +12,15 @@
             <form action="register.php" method="POST">
                 <div class="mb-4">
                     <label for="username">Username</label>
-                    <input type="text" id="username" name="username" required>
+                    <input type="text" id="username" name="username">
                 </div>
                 <div class="mb-4">
                     <label for="password">Password</label>
-                    <input type="password" id="password" name="password" required>
+                    <input type="password" id="password" name="password">
                 </div>
                 <div class="mb-6">
                     <label for="password_confirmation">Password Confirmation</label>
-                    <input type="password" id="password_confirmation" name="password_confirmation" required>
+                    <input type="password" id="password_confirmation" name="password_confirmation">
                 </div>
                 <div>
                     <button type="submit" name ="register">Register</button>
