@@ -22,7 +22,7 @@
                     <button type="submit" name ="login">Login</button>
                 </div>
             </form>
-            <p class="mt-4 text-center">Don't have an account? <a href="#">Sign Up</a></p>
+            <p class="mt-4 text-center">Tidak punya akun? <a href="#">Sign Up</a></p>
         </div>
     </div>
 </body>
