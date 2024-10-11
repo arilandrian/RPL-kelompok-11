@@ -15,4 +15,9 @@ CREATE TABLE `tb_user` (
   `id_level` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+CREATE TABLE tb_stok (
+  id_stok INT(11) NOT NULL,
+  jumlah INT(11) NOT NULL
+  );
+
  
