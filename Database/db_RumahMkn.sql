@@ -7,4 +7,4 @@ CREATE TABLE `tb_menu` (
   `gambar_masakan` varchar(150) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
-
+ 
