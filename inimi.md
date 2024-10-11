@@ -1,1 +1,1 @@
-saya belajar mengetik
+besok hari sabtu,hari nda jadi libur
