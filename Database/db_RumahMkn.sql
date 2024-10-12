@@ -18,5 +18,17 @@ CREATE TABLE tb_stok (
   id_stok INT(11) NOT NULL,
   jumlah INT(11) NOT NULL
   );
+CREATE TABLE pesanan (
+  id INT(11) NOT NULL,
+  jumlah INT(11) NOT NULL,
+  status_pesanan ENUM );
+CREATE TABLE detail_pesanan (
+  id INT(11) NOT NULL,
+  no_meja INT(11) NOT NULL,
+  waktu_pesanan DATETIME NOT NULL,
+  total_harga DECIMAL(10, 2) NOT NULL,
+  uang_bayar DECIMAL(10, 2) NOT NULL,
+  uang_kembali DECIMAL(10, 2) NOT NULL );
+
 
  
