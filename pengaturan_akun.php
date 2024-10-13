@@ -73,7 +73,24 @@ $result_akun = $koneksi->query($query_akun);
                 <th>Password</th>
                 <th>Aksi</th>
             </tr>
-            </table>
+            <?php
+            $no = 1;
+            while ($akun = $result_akun->fetch_assoc()): 
+            ?>
+                <tr>
+                    <td><?php echo $no++; ?></td>
+                    <td><?php echo htmlspecialchars($akun['username']); ?></td>
+                    <td><?php echo htmlspecialchars($akun['nama_user']); ?></td>
+                    <td><?php echo htmlspecialchars($akun['password']); ?></td> <!-- Menampilkan password -->
+                    <td>
+                        <form method="POST" action="pengaturan_akun.php">
+                            <input type="hidden" name="id_user" value="<?php echo $akun['id_user']; ?>">
+                            <button type="submit" name="hapus_akun" onclick="return confirm('Apakah Anda yakin ingin menghapus akun ini? Semua data terkait akan dihapus.');">Hapus</button>
+                        </form>
+                    </td>
+                </tr>
+            <?php endwhile; ?>
+        </table>
         <br>
     </div>
 </body>

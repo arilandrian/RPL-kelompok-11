@@ -55,14 +55,12 @@ $result_transaksi = $koneksi->query($query_transaksi);
 
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Riwayat Transaksi</title>
     <link rel="stylesheet" href="css/admin.css"> <!-- Sesuaikan dengan file CSS yang ada -->
 </head>
-
 <body>
     <div class="admin-container">
         <h2>Riwayat Transaksi</h2>
@@ -80,7 +78,22 @@ $result_transaksi = $koneksi->query($query_transaksi);
                 <th>Total Harga</th>
                 <th>Waktu Pesan</th>
             </tr>
+            <?php
+            $no = 1;
+            while ($transaksi = $result_transaksi->fetch_assoc()): 
+            ?>
+                <tr>
+                    <td><?php echo $no++; ?></td>
+                    <td><?php echo htmlspecialchars($transaksi['nama_user']); ?></td>
+                    <td><?php echo htmlspecialchars($transaksi['no_meja']); ?></td>
+                    <td><?php echo htmlspecialchars($transaksi['daftar_masakan']); ?></td>
+                    <td>Rp <?php echo number_format($transaksi['total_harga'], 0, ',', '.'); ?></td>
+                    <td><?php echo htmlspecialchars($transaksi['waktu_pesan']); ?></td>
+                </tr>
+            <?php endwhile; ?>
         </table>
-</body>
 
+        <h3>Total Penjualan: Rp <?php echo number_format($total_penjualan, 0, ',', '.'); ?></h3> <!-- Menampilkan total penjualan di bawah tabel -->
+    </div>
+</body>
 </html>
