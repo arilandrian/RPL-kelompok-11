@@ -85,3 +85,6 @@ ALTER TABLE `tb_pesan`
   ADD KEY `id_order` (`id_order`),
   ADD KEY `id_masakan` (`id_masakan`);
 
+ALTER TABLE `tb_riwayat_transaksi`
+  ADD PRIMARY KEY (`id_transaksi`),
+  ADD KEY `id_order` (`id_order`);
