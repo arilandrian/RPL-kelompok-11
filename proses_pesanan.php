@@ -1,3 +1,61 @@
+<?php
+session_start();
+include 'koneksi.php'; // Koneksi database
+
+// Cek apakah pengguna sudah login sebagai admin
+if (!isset($_SESSION['id_user']) || $_SESSION['username'] !== 'admin') {
+    header("Location: login.php");
+    exit();
+}
+
+// Ambil ID order yang akan diproses
+$id_order = isset($_POST['id_order']) ? $_POST['id_order'] : 0;
+
+// Ambil detail pesanan dari database
+$query = "SELECT o.no_meja, u.nama_user, m.nama_masakan, p.jumlah, m.harga
+          FROM tb_order o
+          JOIN tb_user u ON o.id_user = u.id_user
+          JOIN tb_pesan p ON o.id_order = p.id_order
+          JOIN tb_masakan m ON p.id_masakan = m.id_masakan
+          WHERE o.id_order = ?";
+$stmt = $koneksi->prepare($query);
+$stmt->bind_param("i", $id_order);
+$stmt->execute();
+$result = $stmt->get_result();
+
+$total_harga = 0; // Variabel untuk menyimpan total harga
+$pesanan = []; // Array untuk menyimpan detail pesanan
+
+while ($row = $result->fetch_assoc()) {
+    $row['subtotal'] = $row['jumlah'] * $row['harga']; // Hitung subtotal
+    $total_harga += $row['subtotal']; // Tambahkan subtotal ke total
+    $pesanan[] = $row; // Simpan detail pesanan
+}
+
+$stmt->close();
+
+// Proses jika tombol Cancel ditekan
+if (isset($_POST['cancel_order'])) {
+    // Hapus pesanan dari tb_pesan dan tb_order
+    $query_hapus_pesan = "DELETE FROM tb_pesan WHERE id_order = ?";
+    $stmt_hapus_pesan = $koneksi->prepare($query_hapus_pesan);
+    $stmt_hapus_pesan->bind_param("i", $id_order);
+    $stmt_hapus_pesan->execute();
+
+    $query_hapus_order = "DELETE FROM tb_order WHERE id_order = ?";
+    $stmt_hapus_order = $koneksi->prepare($query_hapus_order);
+    $stmt_hapus_order->bind_param("i", $id_order);
+    $stmt_hapus_order->execute();
+
+    $stmt_hapus_pesan->close();
+    $stmt_hapus_order->close();
+
+    // Redirect kembali ke halaman admin atau tampilkan pesan sukses
+    header("Location: admin.php?message=Pesanan berhasil dibatalkan");
+    exit();
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
