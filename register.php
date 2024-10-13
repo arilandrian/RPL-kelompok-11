@@ -1,6 +1,6 @@
 <?php
 session_start();
-include 'koneksi.php'; 
+include 'connection/koneksi.php'; 
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $username = $_POST['username'];
