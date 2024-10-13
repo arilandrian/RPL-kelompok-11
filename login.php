@@ -25,5 +25,42 @@
             <p class="mt-4 text-center">Tidak punya akun? <a href="#">Sign Up</a></p>
         </div>
     </div>
+
+    
+	<?php
+session_start();
+include 'koneksi.php';
+
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    $username = $_POST['username'];
+    $password = $_POST['password'];
+
+    // Cek pengguna terdaftar
+    $query = "SELECT * FROM tb_user WHERE username = ? AND password = ?";
+    $stmt = $koneksi->prepare($query);
+    $stmt->bind_param("ss", $username, $password);
+    $stmt->execute();
+    $result = $stmt->get_result();
+
+    if ($result->num_rows > 0) {
+        $user = $result->fetch_assoc();
+        $_SESSION['id_user'] = $user['id_user'];
+        $_SESSION['username'] = $user['username'];
+
+        // Jika admin, arahkan ke admin.php
+        if ($username == 'admin') {
+            header("Location: admin.php");
+        } else {
+            header("Location: menu.php");
+        }
+        exit();
+    } else {
+        $error = "Username atau password salah.";
+    }
+}
+?>
+
 </body>
 </html>
+
+
