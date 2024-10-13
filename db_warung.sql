@@ -52,3 +52,14 @@ CREATE TABLE `tb_pesan` (
   `jumlah` int NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
+CREATE TABLE `tb_riwayat_transaksi` (
+  `id_transaksi` int NOT NULL,
+  `id_order` int NOT NULL,
+  `nama_user` varchar(100) NOT NULL,
+  `no_meja` varchar(20) NOT NULL,
+  `total_harga` decimal(10,2) NOT NULL,
+  `pembayaran` decimal(10,2) NOT NULL,
+  `kembalian` decimal(10,2) NOT NULL,
+  `waktu_transaksi` datetime NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
