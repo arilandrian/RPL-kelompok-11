@@ -101,3 +101,24 @@ ALTER TABLE `tb_order`
 
 ALTER TABLE `tb_pesan`
   MODIFY `id_pesan` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=82;
+
+ALTER TABLE `tb_riwayat_transaksi`
+  MODIFY `id_transaksi` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+
+ALTER TABLE `tb_user`
+  MODIFY `id_user` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+
+ALTER TABLE `tb_order`
+  ADD CONSTRAINT `tb_order_ibfk_1` FOREIGN KEY (`id_user`) REFERENCES `tb_user` (`id_user`);
+
+ALTER TABLE `tb_pesan`
+  ADD CONSTRAINT `tb_pesan_ibfk_1` FOREIGN KEY (`id_order`) REFERENCES `tb_order` (`id_order`),
+  ADD CONSTRAINT `tb_pesan_ibfk_2` FOREIGN KEY (`id_masakan`) REFERENCES `tb_masakan` (`id_masakan`);
+
+ALTER TABLE `tb_riwayat_transaksi`
+  ADD CONSTRAINT `tb_riwayat_transaksi_ibfk_1` FOREIGN KEY (`id_order`) REFERENCES `tb_order` (`id_order`);
+COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
