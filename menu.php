@@ -1,3 +1,86 @@
+<?php
+session_start();
+include 'koneksi.php';
+
+// Cek apakah pengguna sudah login
+if (!isset($_SESSION['id_user'])) {
+    die("Silakan login terlebih dahulu.");
+}
+
+// Ambil data masakan yang tersedia
+$query_masakan = "SELECT * FROM tb_masakan WHERE status_masakan = 'tersedia' AND stok > 0";
+$result_masakan = $koneksi->query($query_masakan);
+
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    $no_meja = $_POST['no_meja'];
+    $total_harga = 0;
+
+    // Simpan stok sementara untuk rollback jika pesanan gagal
+    $stok_sementara = [];
+
+    foreach ($_POST['jumlah'] as $id_masakan => $jumlah) {
+        if ($jumlah > 0) {
+            // Ambil harga dan stok masakan
+            $query_harga = "SELECT harga, stok FROM tb_masakan WHERE id_masakan = ?";
+            $stmt_harga = $koneksi->prepare($query_harga);
+            $stmt_harga->bind_param("i", $id_masakan);
+            $stmt_harga->execute();
+            $result_harga = $stmt_harga->get_result();
+            $data_masakan = $result_harga->fetch_assoc();
+
+            $harga_masakan = $data_masakan['harga'];
+            $stok_masakan = $data_masakan['stok'];
+
+            // Periksa apakah jumlah pesanan melebihi stok
+            if ($jumlah > $stok_masakan) {
+                echo "Jumlah pesanan untuk {$data_masakan['nama_masakan']} melebihi stok yang tersedia ($stok_masakan).";
+                exit; // Hentikan eksekusi jika jumlah melebihi stok
+            }
+
+            // Hitung total harga
+            $total_harga += $harga_masakan * $jumlah;
+
+            // Simpan pesanan ke session
+            $_SESSION['keranjang'][$id_masakan] = $jumlah;
+
+            // Simpan stok untuk rollback
+            $stok_sementara[$id_masakan] = $jumlah;
+        }
+    }
+
+    // Proses checkout
+    $query_order = "INSERT INTO tb_order (id_user, no_meja, total_harga, waktu_pesan) VALUES (?, ?, ?, NOW())";
+    $stmt_order = $koneksi->prepare($query_order);
+    $stmt_order->bind_param("isi", $_SESSION['id_user'], $no_meja, $total_harga);
+
+    if ($stmt_order->execute()) {
+        $id_order = $stmt_order->insert_id;
+
+        // Simpan detail pesanan
+        foreach ($_SESSION['keranjang'] as $id_masakan => $jumlah) {
+            $query_pesan = "INSERT INTO tb_pesan (id_order, id_masakan, jumlah) VALUES (?, ?, ?)";
+            $stmt_pesan = $koneksi->prepare($query_pesan);
+            $stmt_pesan->bind_param("iii", $id_order, $id_masakan, $jumlah);
+            $stmt_pesan->execute();
+        }
+
+        // Kurangi stok di database setelah pesanan berhasil
+        foreach ($stok_sementara as $id_masakan => $jumlah) {
+            $query_update_stok = "UPDATE tb_masakan SET stok = stok - ? WHERE id_masakan = ?";
+            $stmt_update_stok = $koneksi->prepare($query_update_stok);
+            $stmt_update_stok->bind_param("ii", $jumlah, $id_masakan);
+            $stmt_update_stok->execute();
+        }
+
+        // Kosongkan keranjang
+        unset($_SESSION['keranjang']);
+        header("Location: terima.php"); // Arahkan ke halaman terima kasih
+        exit();
+    } else {
+        echo "Terjadi kesalahan: " . $stmt_order->error;
+    }
+}
+?>
 <html lang="en">
 
 <head>
