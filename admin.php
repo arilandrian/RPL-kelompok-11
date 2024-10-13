@@ -51,3 +51,19 @@ if (!isset($_SESSION['id_user']) || $_SESSION['username'] !== 'admin') {
                 }
             });
         }
+
+
+        // Fungsi untuk memuat riwayat transaksi dengan filter
+        function loadRiwayatTransaksi(filter = 'today') {
+            $.ajax({
+                url: 'riwayat_transaksi.php',
+                type: 'GET',
+                data: { filter: filter },
+                success: function(response) {
+                    $('#content-area').html(response); // Masukkan konten ke div content-area
+                },
+                error: function() {
+                    $('#content-area').html('<p>Error loading riwayat transaksi.</p>');
+                }
+            });
+        }
