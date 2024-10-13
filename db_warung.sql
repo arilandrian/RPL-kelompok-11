@@ -88,3 +88,7 @@ ALTER TABLE `tb_pesan`
 ALTER TABLE `tb_riwayat_transaksi`
   ADD PRIMARY KEY (`id_transaksi`),
   ADD KEY `id_order` (`id_order`);
+
+ALTER TABLE `tb_user`
+  ADD PRIMARY KEY (`id_user`),
+  ADD UNIQUE KEY `username` (`username`);
