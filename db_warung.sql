@@ -79,3 +79,9 @@ ALTER TABLE `tb_masakan`
 ALTER TABLE `tb_order`
   ADD PRIMARY KEY (`id_order`),
   ADD KEY `id_user` (`id_user`);
+
+ALTER TABLE `tb_pesan`
+  ADD PRIMARY KEY (`id_pesan`),
+  ADD KEY `id_order` (`id_order`),
+  ADD KEY `id_masakan` (`id_masakan`);
+
