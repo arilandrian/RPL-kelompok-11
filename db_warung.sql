@@ -108,4 +108,5 @@ ALTER TABLE `tb_riwayat_transaksi`
 ALTER TABLE `tb_user`
   MODIFY `id_user` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
-
+ALTER TABLE `tb_order`
+  ADD CONSTRAINT `tb_order_ibfk_1` FOREIGN KEY (`id_user`) REFERENCES `tb_user` (`id_user`);
