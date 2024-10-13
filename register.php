@@ -1,3 +1,36 @@
+<?php
+session_start();
+include 'koneksi.php'; 
+
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    $username = $_POST['username'];
+    $password = $_POST['password'];
+    $nama_user = $_POST['nama_user'];
+
+    $query_check = "SELECT * FROM tb_user WHERE username = ?";
+    $stmt_check = $koneksi->prepare($query_check);
+    $stmt_check->bind_param("s", $username);
+    $stmt_check->execute();
+    $result_check = $stmt_check->get_result();
+
+    if ($result_check->num_rows > 0) {
+        $message = "Username sudah terdaftar. Silakan pilih username lain.";
+    } else {
+        // Proses registrasi
+        $query_register = "INSERT INTO tb_user (username, password, nama_user) VALUES (?, ?, ?)";
+        $stmt_register = $koneksi->prepare($query_register);
+        $stmt_register->bind_param("sss", $username, $password, $nama_user);
+        
+        if ($stmt_register->execute()) {
+            
+            header("Location: login.php");
+            exit(); 
+        } else {
+            $message = "Terjadi kesalahan saat registrasi: " . $stmt_register->error;
+        }
+    }
+}
+?>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
