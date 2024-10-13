@@ -1,0 +1,75 @@
+/* style.css */
+body {
+    font-family: 'Outfit', sans-serif; /* Menggunakan font modern */
+    margin: 20px;
+    background-color: #f4f4f4; /* Latar belakang lembut */
+    color: #333; /* Warna teks */
+}
+
+h1 {
+    color: #5e2525; /* Warna judul yang menarik */
+    text-align: center; /* Meratakan judul ke tengah */
+    margin-bottom: 30px; /* Jarak bawah untuk judul */
+    font-size: 36px; /* Ukuran font judul */
+}
+
+form {
+    background-color: white; /* Latar belakang form putih */
+    padding: 30px; /* Menambah padding dalam form */
+    border-radius: 10px; /* Sudut membulat */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Bayangan lembut */
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin: 15px 0 5px; /* Jarak untuk label */
+    font-weight: bold; /* Tebal untuk label */
+}
+
+input[type="text"],
+input[type="number"] {
+    width: 100%;
+    padding: 12px; /* Menambah padding */
+    margin-bottom: 15px; /* Menambah jarak bawah */
+    border: 1px solid #ccc; /* Border abu-abu */
+    border-radius: 5px; /* Sudut membulat */
+    transition: border-color 0.3s ease, box-shadow 0.3s ease; /* Transisi untuk border */
+}
+
+input[type="text"]:focus,
+input[type="number"]:focus {
+    border-color: #28a745; /* Warna border saat fokus */
+    box-shadow: 0 0 5px rgba(40, 167, 69, 0.5); /* Bayangan saat fokus */
+}
+
+button {
+    padding: 12px 20px; /* Menambah padding tombol */
+    background-color: #28a745; /* Warna latar belakang tombol */
+    color: white; /* Warna teks tombol */
+    border: none; /* Menghilangkan border */
+    border-radius: 5px; /* Sudut membulat */
+    cursor: pointer; /* Kursor pointer saat hover */
+    font-size: 16px; /* Ukuran font tombol */
+    transition: background-color 0.3s ease; /* Transisi untuk warna tombol */
+    width: 100%; /* Lebar tombol 100% */
+}
+
+button:hover {
+    background-color: #218838; /* Warna tombol saat hover */
+}
+
+.btn-back {
+    display: inline-block; /* Mengatur tampilan inline */
+    padding: 12px 20px; /* Menambah padding tombol kembali */
+    background-color: #007bff; /* Warna latar belakang tombol kembali */
+    color: white; /* Warna teks tombol kembali */
+    text-decoration: none; /* Menghilangkan garis bawah */
+    border-radius: 5px; /* Sudut membulat */
+    font-size: 16px; /* Ukuran font tombol kembali */
+    transition: background-color 0.3s ease; /* Transisi untuk warna tombol kembali */
+}
+
+.btn-back:hover {
+    background-color: #0056b3; /* Warna tombol kembali saat hover */
+}
