@@ -92,3 +92,6 @@ ALTER TABLE `tb_riwayat_transaksi`
 ALTER TABLE `tb_user`
   ADD PRIMARY KEY (`id_user`),
   ADD UNIQUE KEY `username` (`username`);
+
+ALTER TABLE `tb_masakan`
+  MODIFY `id_masakan` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
