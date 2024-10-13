@@ -1,1 +1,0 @@
-besok hari sabtu,hari nda jadi libur. jadi mau masuk mtk diskrit
