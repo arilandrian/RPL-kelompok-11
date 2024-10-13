@@ -1,6 +1,6 @@
 <?php
 session_start();
-include 'koneksi.php'; // Koneksi database
+include 'connection/koneksi.php'; // Koneksi database
 
 // Cek apakah pengguna sudah login sebagai admin
 if (!isset($_SESSION['id_user']) || $_SESSION['username'] !== 'admin') {
