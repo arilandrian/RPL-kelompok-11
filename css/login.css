@@ -52,6 +52,26 @@ button[type="submit"] {
 button[type="submit"]:hover {
     background-color: #5E2626;
 }
+.button-container {
+    position: absolute; /* Memungkinkan penempatan relatif terhadap kontainer */
+    top: 20px; /* Jarak dari atas */
+    right: 20px; /* Jarak dari kanan */
+}
+
+.button-container button {
+    padding: 10px 20px; /* Padding untuk tombol */
+    border: none; /* Tanpa border */
+    border-radius: 4px; /* Sudut membulat */
+    background-color: #5E2626; /* Warna latar belakang hijau */
+    color: white; /* Warna teks putih */
+    font-size: 16px; /* Ukuran font */
+    cursor: pointer; /* Tangan saat hover */
+}
+
+.button-container button:hover {
+    background-color: rgb(55, 14, 14); /* Warna latar belakang saat hover */
+}
+
 
 p {
     text-align: center;

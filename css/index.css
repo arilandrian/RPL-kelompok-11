@@ -1,0 +1,161 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Outfit', sans-serif;
+}
+
+body {
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+header {
+    background-color: #5e2525;
+    padding: 20px; /* Padding header */
+    text-align: center;
+    color: white;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 36px;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+nav ul li {
+    display: inline;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 25px;
+}
+
+nav ul li a:hover {
+    color: #220e0e;
+    transition: background-color 0.3s ease;
+}
+
+#hero {
+    background-image: url('../gambar/background.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    padding: 20px; /* Padding di dalam hero */
+}
+
+#hero h2 {
+    font-size: 48px;
+}
+
+#hero p {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.btn {
+    padding: 10px 20px;
+    background-color: #5e2525;
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+    border-radius: 5px;
+    box-shadow: 0 10px 7px rgba(0, 0, 0, 0.3);
+}
+
+.btn:hover {
+    background-color: #220e0e;
+    transition: background-color 0.3s ease;
+}
+
+.order-btn {
+    padding: 10px 35px;
+    background-color: #30E359;
+    color: rgb(0, 0, 0);
+    text-align: center;
+    text-decoration: none;
+    font-size: 25px;
+    border-radius: 5px;
+    margin-bottom: 40px;
+    box-shadow: 0 10px 7px rgba(0, 0, 0, 0.3);
+}
+
+.order-btn:hover {
+    background-color: #218838;
+    transition: background-color 0.3s ease;
+}
+
+.order-button {
+    margin-bottom: 50px; 
+}
+
+#menu {
+    padding: 50px 20px; /* Menambahkan padding untuk menu */
+    background-color: #fff;
+    text-align: center;
+}
+
+#menu h2 {
+    margin-bottom: 40px;
+    font-size: 32px;
+}
+
+.menu-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around; /* Mengatur jarak antar item */
+    margin-top: 20px; /* Jarak atas */
+}
+
+.menu-item {
+    width: 30%; /* Atur lebar setiap item menu */
+    margin-bottom: 20px; /* Jarak bawah */
+    text-align: center; /* Teks di tengah */
+    padding: 10px; /* Padding dalam item menu */
+}
+
+.menu-item img {
+    width: 100%; /* Sesuaikan dengan lebar kontainer */
+    height: auto; /* Mempertahankan rasio aspek gambar */
+    max-height: 250px; /* Batasi tinggi maksimum gambar */
+    object-fit: cover; /* Memastikan gambar memenuhi area tanpa distorsi */
+    border-radius: 15px; /* Membuat sudut gambar menjadi bulat */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Menambahkan efek bayangan */
+}
+
+.menu-item h3 {
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+
+#about, #contact {
+    padding: 50px 20px; /* Padding di bagian tentang dan kontak */
+    text-align: center;
+    background-color: #f4f4f4;
+}
+
+#about h2, #contact h2 {
+    margin-bottom: 20px;
+}
+
+footer {
+    background-color: #5e2525;
+    color: white;
+    padding: 20px; /* Padding footer */
+    text-align: center;
+}
