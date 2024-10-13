@@ -36,3 +36,18 @@ if (!isset($_SESSION['id_user']) || $_SESSION['username'] !== 'admin') {
             <!-- Konten dinamis dari file lain akan dimuat di sini -->
         </div>
     </div>
+
+    <script>
+        // Fungsi untuk memuat konten dari file lain menggunakan AJAX
+        function loadContent(page) {
+            $.ajax({
+                url: page,
+                type: 'GET',
+                success: function(response) {
+                    $('#content-area').html(response); // Masukkan konten ke div content-area
+                },
+                error: function() {
+                    $('#content-area').html('<p>Error loading content.</p>');
+                }
+            });
+        }
