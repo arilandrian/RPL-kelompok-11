@@ -1,3 +1,40 @@
+<?php
+// Koneksi ke database
+include 'koneksi.php';
+
+// Hapus menu jika ada perintah hapus melalui AJAX
+if (isset($_GET['hapus'])) {
+    $id_masakan = $_GET['hapus'];
+    $query = "DELETE FROM tb_masakan WHERE id_masakan = '$id_masakan'";
+    if ($koneksi->query($query)) {
+        // Kembalikan respon sukses untuk AJAX
+        echo "Menu berhasil dihapus";
+        exit();
+    } else {
+        echo "Gagal menghapus menu";
+        exit();
+    }
+}
+
+// Ambil data menu
+$query = "SELECT * FROM tb_masakan";
+$result = $koneksi->query($query);
+
+// Update status_masakan berdasarkan stok
+while ($data = $result->fetch_assoc()) {
+    $stok = $data['stok'];
+    $status_masakan = ($stok > 0) ? 'tersedia' : 'tidak tersedia';
+
+    // Update status_masakan di database jika perlu
+    $id_masakan = $data['id_masakan'];
+    $update_status_query = "UPDATE tb_masakan SET status_masakan = '$status_masakan' WHERE id_masakan = '$id_masakan'";
+    $koneksi->query($update_status_query);
+}
+
+// Refresh data setelah update
+$query = "SELECT * FROM tb_masakan";
+$result = $koneksi->query($query);
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -62,3 +99,5 @@
 </body>
 
 </html>
+
+
