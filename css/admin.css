@@ -1,0 +1,145 @@
+/* Global Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f9fa; /* Warna latar belakang yang lembut */
+}
+
+/* Container for Admin Panel */
+.admin-container {
+    max-width: 1000px;
+    margin: 20px auto; /* Memberikan jarak atas */
+    padding: 20px;
+    background-color: #ffffff; /* Warna latar belakang putih untuk konten */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Bayangan untuk tampilan yang lebih dalam */
+    border-radius: 8px; /* Sudut melengkung */
+}
+
+/* Headings */
+h1 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px; /* Memberikan jarak bawah */
+}
+
+/* Navigation Bar Styles */
+.nav-bar {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: space-around;
+    background-color: #7C3333;
+    border-radius: 8px; /* Sudut melengkung untuk navbar */
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1); /* Bayangan untuk navbar */
+}
+
+.nav-bar li {
+    display: inline;
+}
+
+.nav-bar li a {
+    color: #fff;
+    padding: 15px 20px;
+    display: block;
+    text-decoration: none;
+    transition: background-color 0.3s ease; /* Transisi untuk efek hover */
+}
+
+.nav-bar li a:hover {
+    background-color: #5E2626;
+}
+
+/* Content Section */
+.content-section {
+    margin-top: 20px;
+}
+
+/* Table Styles */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+table th, table td {
+    padding: 10px;
+    border: 1px solid #ccc;
+    text-align: left;
+    transition: background-color 0.3s ease; /* Transisi untuk efek hover pada tabel */
+}
+
+table th {
+    background-color: #f4f4f4;
+    font-weight: bold; /* Menebalkan teks judul tabel */
+}
+
+/* Hover effect for table rows */
+table tr:hover {
+    background-color: #f1f1f1; /* Warna latar belakang saat hover */
+}
+
+/* Input Styles */
+input[type="text"], input[type="number"] {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    transition: border-color 0.3s ease; /* Transisi border saat fokus */
+}
+
+input[type="text"]:focus, input[type="number"]:focus {
+    border-color: #7C3333; /* Warna border saat fokus */
+}
+
+/* Button Styles */
+button {
+    background-color: #7C3333;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* Transisi untuk efek hover */
+}
+
+button:hover {
+    background-color: #5E2626;
+}
+
+.filter-buttons a {
+    padding: 10px;
+    margin: 5px;
+    text-decoration: none;
+    background-color: #f0f0f0;
+    color: #333;
+    border-radius: 5px;
+}
+
+.filter-buttons a.active {
+    background-color: #007bff;
+    color: white;
+}
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .nav-bar {
+        flex-direction: column; /* Stack nav items on smaller screens */
+    }
+
+    .nav-bar li {
+        margin-bottom: 10px; /* Space between nav items */
+    }
+
+    .admin-container {
+        padding: 15px; /* Mengurangi padding di layar kecil */
+    }
+
+    h1 {
+        font-size: 24px; /* Ukuran font yang lebih kecil di layar kecil */
+    }
+}
