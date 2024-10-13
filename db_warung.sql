@@ -72,3 +72,6 @@ CREATE TABLE `tb_user` (
 
 INSERT INTO `tb_user` (`id_user`, `username`, `password`, `nama_user`) VALUES
 (3, 'admin', 'admin123', 'Admin Warung'),
+
+ALTER TABLE `tb_masakan`
+  ADD PRIMARY KEY (`id_masakan`);
