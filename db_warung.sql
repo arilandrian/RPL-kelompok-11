@@ -110,3 +110,7 @@ ALTER TABLE `tb_user`
 
 ALTER TABLE `tb_order`
   ADD CONSTRAINT `tb_order_ibfk_1` FOREIGN KEY (`id_user`) REFERENCES `tb_user` (`id_user`);
+
+ALTER TABLE `tb_pesan`
+  ADD CONSTRAINT `tb_pesan_ibfk_1` FOREIGN KEY (`id_order`) REFERENCES `tb_order` (`id_order`),
+  ADD CONSTRAINT `tb_pesan_ibfk_2` FOREIGN KEY (`id_masakan`) REFERENCES `tb_masakan` (`id_masakan`);
