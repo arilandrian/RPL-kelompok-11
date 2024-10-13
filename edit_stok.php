@@ -1,6 +1,6 @@
 <?php
 // Koneksi ke database
-include 'koneksi.php'; // Pastikan path ini benar
+include 'connection/koneksi.php'; // Pastikan path ini benar
 
 // Cek apakah ada ID yang diberikan
 $id_masakan = isset($_GET['id']) ? $_GET['id'] : null;
