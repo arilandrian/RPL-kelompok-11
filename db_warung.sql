@@ -105,5 +105,7 @@ ALTER TABLE `tb_pesan`
 ALTER TABLE `tb_riwayat_transaksi`
   MODIFY `id_transaksi` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
+ALTER TABLE `tb_user`
+  MODIFY `id_user` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 
