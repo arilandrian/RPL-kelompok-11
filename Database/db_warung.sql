@@ -18,5 +18,13 @@ SET time_zone = "+00:00";
 --
 -- Table structure for table `tb_masakan`
 --
+CREATE TABLE `tb_masakan` (
+  `id_masakan` int NOT NULL,
+  `nama_masakan` varchar(100) NOT NULL,
+  `gambar_masakan` varchar(255) DEFAULT NULL,
+  `harga` decimal(10,2) NOT NULL,
+  `status_masakan` enum('tersedia','tidak tersedia') NOT NULL,
+  `stok` int NOT NULL DEFAULT '0'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
  
