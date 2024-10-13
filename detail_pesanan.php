@@ -63,5 +63,24 @@ if (!isset($_SESSION['id_user']) || $_SESSION['username'] !== 'admin') {
                 
                 $stmt_makanan->close();
             ?>
+
+<tr>
+                    <td><?php echo $no++; ?></td>
+                    <td><?php echo htmlspecialchars($pesanan['nama_lengkap']); ?></td> <!-- Nama lengkap pembeli -->
+                    <td><?php echo htmlspecialchars($pesanan['no_meja']); ?></td>
+                    <td>Rp <?php echo number_format($pesanan['total_harga'], 0, ',', '.'); ?></td>
+                    <td><?php echo htmlspecialchars($pesanan['waktu_pesan']); ?></td>
+                    <td><?php echo htmlspecialchars($pesanan['status']); ?></td>
+                    <td><?php echo htmlspecialchars($nama_makanan); ?></td> <!-- Makanan yang dipesan dengan jumlahnya -->
+                    <td>
+                        <form method="POST" action="proses_pesanan.php">
+                            <input type="hidden" name="id_order" value="<?php echo htmlspecialchars($pesanan['id_order']); ?>">
+                            <button type="submit" name="update_status" value="proses">Proses</button>
+                        </form>
+                    </td>
+                </tr>
+            <?php endwhile; ?>
+        </table>
+    </div>
 </body>
 </html>
