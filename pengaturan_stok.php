@@ -1,6 +1,6 @@
 <?php
 // Koneksi ke database
-include 'koneksi.php';
+include 'connection/koneksi.php';
 
 // Hapus menu jika ada perintah hapus melalui AJAX
 if (isset($_GET['hapus'])) {
