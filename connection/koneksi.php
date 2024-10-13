@@ -1,12 +1,14 @@
 <?php
-	$host = "localhost";
-	$user = "root";
-	$pass = "";
-	
-	$db = "db_RumahMKN";
-	$conn = mysqli_connect($host,$user,$pass,$db);
-	mysqli_select_db ($conn, $db);
-	
-	if (!$conn) {
-   		die('Maaf koneksi gagal: '. $connect->connect_error);
-	}
+$servername = "localhost";
+$username = "root"; 
+$password = ""; 
+$dbname = "db_warung";
+
+// Koneksi ke database
+$koneksi = new mysqli($servername, $username, $password, $dbname);
+
+// Cek koneksi
+if ($koneksi->connect_error) {
+    die("Koneksi gagal: " . $koneksi->connect_error);
+}
+?>
