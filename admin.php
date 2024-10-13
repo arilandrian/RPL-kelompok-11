@@ -67,3 +67,30 @@ if (!isset($_SESSION['id_user']) || $_SESSION['username'] !== 'admin') {
                 }
             });
         }
+
+        
+        // Fungsi untuk menghapus menu menggunakan AJAX
+        function hapusMenu(id_masakan) {
+            if (confirm('Apakah Anda yakin ingin menghapus menu ini?')) {
+                $.ajax({
+                    url: 'pengaturan_stok.php',
+                    type: 'GET',
+                    data: { hapus: id_masakan }, // Kirim parameter hapus
+                    success: function(response) {
+                        alert('Menu berhasil dihapus!');
+                        loadContent('pengaturan_stok.php'); // Refresh halaman stok setelah menghapus
+                    },
+                    error: function() {
+                        alert('Gagal menghapus menu.');
+                    }
+                });
+            }
+        }
+
+        // Tampilkan konten default (misalnya, detail pesanan)
+        $(document).ready(function() {
+            loadContent('detail_pesanan.php');
+        });
+    </script>
+</body>
+</html>
