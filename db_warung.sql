@@ -101,3 +101,7 @@ ALTER TABLE `tb_order`
 
 ALTER TABLE `tb_pesan`
   MODIFY `id_pesan` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=82;
+
+ALTER TABLE `tb_riwayat_transaksi`
+  MODIFY `id_transaksi` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+
