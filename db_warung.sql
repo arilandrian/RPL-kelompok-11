@@ -114,3 +114,11 @@ ALTER TABLE `tb_order`
 ALTER TABLE `tb_pesan`
   ADD CONSTRAINT `tb_pesan_ibfk_1` FOREIGN KEY (`id_order`) REFERENCES `tb_order` (`id_order`),
   ADD CONSTRAINT `tb_pesan_ibfk_2` FOREIGN KEY (`id_masakan`) REFERENCES `tb_masakan` (`id_masakan`);
+
+ALTER TABLE `tb_riwayat_transaksi`
+  ADD CONSTRAINT `tb_riwayat_transaksi_ibfk_1` FOREIGN KEY (`id_order`) REFERENCES `tb_order` (`id_order`);
+COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
