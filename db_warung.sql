@@ -75,3 +75,7 @@ INSERT INTO `tb_user` (`id_user`, `username`, `password`, `nama_user`) VALUES
 
 ALTER TABLE `tb_masakan`
   ADD PRIMARY KEY (`id_masakan`);
+
+ALTER TABLE `tb_order`
+  ADD PRIMARY KEY (`id_order`),
+  ADD KEY `id_user` (`id_user`);
