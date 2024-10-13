@@ -69,3 +69,6 @@ CREATE TABLE `tb_user` (
   `password` varchar(255) NOT NULL,
   `nama_user` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+INSERT INTO `tb_user` (`id_user`, `username`, `password`, `nama_user`) VALUES
+(3, 'admin', 'admin123', 'Admin Warung'),
