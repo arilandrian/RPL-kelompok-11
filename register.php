@@ -49,13 +49,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             <div class="message"><?php echo $message; ?></div>
         <?php endif; ?>
         <form method="POST" action="">
-            <label for="username">Username:</label>
+            <label for="username">Username</label>
             <input type="text" id="username" name="username" required>
 
-            <label for="password">Password:</label>
+            <label for="password">Password</label>
             <input type="password" id="password" name="password" required>
 
-            <label for="nama_user">Nama Lengkap:</label>
+            <label for="nama_user">Nama Lengkap</label>
             <input type="text" id="nama_user" name="nama_user" required>
 
             <button type="submit">Daftar</button>
