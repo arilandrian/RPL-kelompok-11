@@ -1,10 +1,10 @@
 <?php
 session_start();
-include 'connection/koneksi.php'; // Koneksi database
+include '../connection/koneksi.php'; // Koneksi database
 
 // Cek apakah pengguna sudah login sebagai admin
 if (!isset($_SESSION['id_user']) || $_SESSION['username'] !== 'admin') {
-    header("Location: login.php");
+    header("Location: ../login.php");
     exit();
 }
 
@@ -61,7 +61,7 @@ if (isset($_POST['cancel_order'])) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/proses_pesanan.css"> <!-- Sesuaikan path jika perlu -->
+    <link rel="stylesheet" href="../css/proses_pesanan.css"> <!-- Sesuaikan path jika perlu -->
     <title>Proses Pesanan</title>
 </head>
 <body>

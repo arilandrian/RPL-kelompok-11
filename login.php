@@ -20,7 +20,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
         // Jika admin, arahkan ke admin.php
         if ($username === 'admin') {
-            header("Location: admin.php");
+            header("Location: admin/admin.php");
         } else {
             header("Location: menu.php");
         }

@@ -1,6 +1,6 @@
 <?php
 // Koneksi ke database
-include 'connection/koneksi.php';
+include '../connection/koneksi.php';
 
 // Hapus menu jika ada perintah hapus melalui AJAX
 if (isset($_GET['hapus'])) {
@@ -56,7 +56,7 @@ $result = $koneksi->query($query);
         <tr>
             <td><?= $data['id_masakan']; ?></td>
             <td><?= $data['nama_masakan']; ?></td>
-            <td><?= $data['harga']; ?></td>
+            <td>Rp <?= number_format($data['harga'], 0, ',', '.'); ?></td>
             <td><?= $data['stok']; ?></td>
             <td><?= $data['status_masakan']; ?></td>
             <td>
@@ -68,7 +68,6 @@ $result = $koneksi->query($query);
 </table>
 
 <script>
-    // Fungsi untuk menghapus menu menggunakan AJAX
     function hapusMenu(id_masakan) {
         if (confirm('Yakin ingin menghapus menu ini?')) {
             $.ajax({
@@ -76,16 +75,21 @@ $result = $koneksi->query($query);
                 type: 'GET',
                 data: { hapus: id_masakan },
                 success: function(response) {
-                    alert(response); // Tampilkan pesan hasil penghapusan
-                    location.reload(); // Muat ulang halaman untuk merefresh daftar menu
+                    if (response === "Menu berhasil dihapus") {
+                        alert(response); 
+                        location.reload();
+                    } else {
+                        alert("Gagal menghapus menu. Coba lagi.");
+                    }
                 },
                 error: function() {
-                    alert('Gagal menghapus menu.');
+                    alert('Terjadi kesalahan. Gagal menghapus menu.');
                 }
             });
         }
     }
 </script>
+
 
 </body>
 
