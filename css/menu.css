@@ -120,14 +120,14 @@ h3 {
     text-align: center;
 }
 
-.menu-container {
+menu-container {
     display: flex; /* Menggunakan flexbox */
     flex-wrap: wrap; /* Membungkus item ke baris baru jika diperlukan */
     gap: 20px; /* Jarak antar item menu */
     justify-content: center; /* Pusatkan menu di dalam kontainer */
 }
 
-.menu-item {
+menu-item {
     flex: 1 1 calc(33.333% - 20px); /* Mengambil sepertiga ruang */
     max-width: calc(33.333% - 20px); /* Batas maksimum agar sesuai dengan kolom */
     display: flex;
