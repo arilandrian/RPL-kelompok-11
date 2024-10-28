@@ -93,7 +93,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 <body>
     <div class="form-container">
-        <h2>Menu Makanan</h2>
+        <h2>Menu Makanan dan Minuman</h2>
         <div class="logout-container">
             <form method="POST" action="logout.php">
                 <button type="submit">Logout</button>
