@@ -156,7 +156,7 @@ h3 {
     border: none;
     border-radius: 6px; /* Sudut lebih melengkung */
     cursor: pointer;
-    font-size: 18px; /* Ukuran font lebih besar */
+    font-size: 20px; /* Ukuran font lebih besar */
     transition: background-color 0.3s; /* Transisi warna saat hover */
 }
 
