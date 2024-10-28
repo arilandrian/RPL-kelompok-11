@@ -120,12 +120,14 @@ h3 {
     text-align: center;
 }
 
-.menu-container {
-    display: flex; /* Gunakan flexbox untuk mengatur item menu */
-    flex-direction: column; /* Atur dalam kolom */
-    gap: 10px; /* Jarak antar menu item */
+menu-container {
+    display: flex; /* Menggunakan flexbox */
+    flex-wrap: wrap; /* Membungkus item ke baris baru jika diperlukan */
+    gap: 20px; /* Jarak antar item menu */
+    justify-content: center; /* Pusatkan menu di dalam kontainer */
 }
 
+<<<<<<< HEAD
 .menu-item {
     display: flex; /* Atur item menu dalam baris */
     align-items: grid; /* Posisi vertikal yang sejajar */
@@ -133,8 +135,20 @@ h3 {
     border: 1px solid #ddd; /* Batas item menu */
     border-radius: 15px; /* Sudut melengkung */
     background-color: #fafafa; /* Warna latar belakang */
+=======
+menu-item {
+    flex: 1 1 calc(33.333% - 20px); /* Mengambil sepertiga ruang */
+    max-width: calc(33.333% - 20px); /* Batas maksimum agar sesuai dengan kolom */
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 15px;
+    background-color: #fafafa;
+>>>>>>> d0037d6dfb317686318b5ad21fadeee1ca30e188
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
+
 
 .menu-info {
     flex: 1; /* Mengambil sisa ruang */

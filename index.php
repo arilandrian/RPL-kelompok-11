@@ -84,6 +84,7 @@ $loggedIn = isset($_SESSION['username']);
                 <p>Rp 7,000</p>
             </div>
             <div class="menu-item">
+<<<<<<< HEAD
                 <img src="gambar/mie_goreng.jpg" alt="Es Jambu">
                 <h3>Es jambu</h3>
                 <p>Rp 5,000</p>
@@ -92,6 +93,11 @@ $loggedIn = isset($_SESSION['username']);
                 <img src="gambar/mie_goreng.jpg" alt="Es yasmine ">
                 <h3>yasmine</h3>
                 <p>Rp 80,000</p>
+=======
+                <img src="gambar/MUHAMMAD_ARIL_ANDRIAN.jpg" alt="Daging Sapi">
+                <h3>Daging Sapi</h3>
+                <p>Gratis</p>
+>>>>>>> d0037d6dfb317686318b5ad21fadeee1ca30e188
             </div>
         </div>
     </section>
