@@ -37,7 +37,7 @@ label {
 }
 
 .input-container button {
-    background-color: #4CAF50; /* Warna hijau untuk tombol */
+    background-color: hwb(122 1% 85%); /* Warna hijau untuk tombol */
     color: white;
     padding: 8px 12px; /* Ukuran padding lebih besar */
     border: none;
@@ -126,20 +126,23 @@ h3 {
     gap: 10px; /* Jarak antar menu item */
 }
 
-.menu-item {
-    display: flex; /* Atur item menu dalam baris */
-    align-items: center; /* Posisi vertikal yang sejajar */
-    padding: 15px; /* Jarak dalam item menu */
-    border: 1px solid #ddd; /* Batas item menu */
-    border-radius: 15px; /* Sudut melengkung */
-    background-color: #fafafa; /* Warna latar belakang */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+.menu-container {
+    display: flex; /* Menggunakan flexbox */
+    flex-wrap: wrap; /* Membungkus item ke baris baru jika diperlukan */
+    gap: 20px; /* Jarak antar item menu */
+    justify-content: center; /* Pusatkan menu di dalam kontainer */
 }
 
-.menu-info {
-    flex: 1; /* Mengambil sisa ruang */
-    text-align: center; /* Teks di tengah */
-    padding: 0 15px; /* Jarak horizontal */
+.menu-item {
+    flex: 1 1 calc(33.333% - 20px); /* Mengambil sepertiga ruang */
+    max-width: calc(33.333% - 20px); /* Batas maksimum agar sesuai dengan kolom */
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    border: 1px solid #ff0f0f;
+    border-radius: 15px;
+    background-color: hsl(0, 72%, 45%);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
 .input-container {
@@ -150,7 +153,7 @@ h3 {
 
 
 .input-container button {
-    background-color: #4CAF50; /* Warna hijau untuk tombol */
+    background-color: hsl(120, 26%, 4%); /* Warna hijau untuk tombol */
     color: white;
     padding: 8px 12px; /* Ukuran padding lebih besar */
     border: none;
