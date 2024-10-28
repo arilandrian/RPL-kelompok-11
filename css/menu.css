@@ -126,11 +126,22 @@ h3 {
     gap: 10px; /* Jarak antar menu item */
 }
 
+<<<<<<< HEAD
 .menu-container {
     display: flex; /* Menggunakan flexbox */
     flex-wrap: wrap; /* Membungkus item ke baris baru jika diperlukan */
     gap: 20px; /* Jarak antar item menu */
     justify-content: center; /* Pusatkan menu di dalam kontainer */
+=======
+.menu-item {
+    display: flex; /* Atur item menu dalam baris */
+    align-items: center; /* Posisi vertikal yang sejajar */
+    padding: 15px; /* Jarak dalam item menu */
+    border: 1px solid hsl(0, 78%, 46%); /* Batas item menu */
+    border-radius: 15px; /* Sudut melengkung */
+    background-color: hwb(0 8% 19%); /* Warna latar belakang */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+>>>>>>> 6fe0d143a3890d5c4e2fb74527ba15f96d1ca29a
 }
 
 .menu-item {

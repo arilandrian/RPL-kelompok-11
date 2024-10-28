@@ -9,6 +9,8 @@ body {
 /* Container for Admin Panel */
 .admin-container {
     max-width: 1000px;
+
+    
     margin: 20px auto; /* Memberikan jarak atas */
     padding: 20px;
     background-color: #ffffff; /* Warna latar belakang putih untuk konten */
