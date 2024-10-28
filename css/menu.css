@@ -37,7 +37,7 @@ label {
 }
 
 .input-container button {
-    background-color: #ff0000; /* Warna hijau untuk tombol */
+    background-color: #4CAF50; /* Warna hijau untuk tombol */
     color: white;
     padding: 8px 12px; /* Ukuran padding lebih besar */
     border: none;
@@ -48,7 +48,7 @@ label {
 }
 
 .input-container button:hover {
-    background-color: #ff0000; /* Warna lebih gelap saat dihover */
+    background-color: #45a049; /* Warna lebih gelap saat dihover */
 }
 
 /* Gaya untuk input jumlah */
@@ -56,7 +56,7 @@ input[type="number"] {
     width: 60px; /* Lebar khusus untuk input nomor */
     margin: 0 5px; /* Jarak antara tombol dan input */
     text-align: center; /* Untuk menempatkan angka di tengah */
-    border: 2px solid #ff0000; /* Border hijau untuk input jumlah */
+    border: 2px solid #4CAF50; /* Border hijau untuk input jumlah */
     border-radius: 4px; /* Sudut lebih melengkung */
     font-size: 16px; /* Ukuran font */
     padding: 5px; /* Padding untuk input */
@@ -76,7 +76,7 @@ input[type="text"] {
 .input-meja {
     padding: 10px;
     margin: 10px 0;
-    border: 2px solid #ff0000; /* Border hijau untuk input meja */
+    border: 2px solid #4CAF50; /* Border hijau untuk input meja */
     border-radius: 4px;
     font-size: 16px;
     text-align: center;
@@ -85,7 +85,7 @@ input[type="text"] {
 }
 
 .input-meja:focus {
-    border-color: #ff0000; /* Ubah warna border saat fokus */
+    border-color: #45a049; /* Ubah warna border saat fokus */
     outline: none; /* Hapus outline default */
 }
 
@@ -98,7 +98,7 @@ input[type="text"] {
 
 /* Tombol */
 button {
-    background-color: #ff0000; /* Hijau */
+    background-color: #4CAF50; /* Hijau */
     color: white;
     padding: 10px 15px;
     border: none;
@@ -110,7 +110,7 @@ button {
 }
 
 button:hover {
-    background-color: #ff0000; /* Hijau lebih gelap */
+    background-color: #45a049; /* Hijau lebih gelap */
 }
 
 /* Judul dan Menu Item */
@@ -120,57 +120,43 @@ h3 {
     text-align: center;
 }
 
-menu-container {
-    display: flex; /* Menggunakan flexbox */
-    flex-wrap: wrap; /* Membungkus item ke baris baru jika diperlukan */
-    gap: 20px; /* Jarak antar item menu */
-    justify-content: center; /* Pusatkan menu di dalam kontainer */
+.menu-container {
+    display: flex; /* Gunakan flexbox untuk mengatur item menu */
+    flex-direction: column; /* Atur dalam kolom */
+    gap: 10px; /* Jarak antar menu item */
 }
 
-<<<<<<< HEAD
 .menu-item {
     display: flex; /* Atur item menu dalam baris */
-    align-items: grid; /* Posisi vertikal yang sejajar */
+    align-items: center; /* Posisi vertikal yang sejajar */
     padding: 15px; /* Jarak dalam item menu */
-    border: 1px solid #ddd; /* Batas item menu */
+    border: 1px solid hsl(0, 78%, 46%); /* Batas item menu */
     border-radius: 15px; /* Sudut melengkung */
-    background-color: #fafafa; /* Warna latar belakang */
-=======
-menu-item {
-    flex: 1 1 calc(33.333% - 20px); /* Mengambil sepertiga ruang */
-    max-width: calc(33.333% - 20px); /* Batas maksimum agar sesuai dengan kolom */
-    display: flex;
-    align-items: center;
-    padding: 15px;
-    border: 1px solid #ddd;
-    border-radius: 15px;
-    background-color: #fafafa;
->>>>>>> d0037d6dfb317686318b5ad21fadeee1ca30e188
+    background-color: hwb(0 8% 19%); /* Warna latar belakang */
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
-
 .menu-info {
     flex: 1; /* Mengambil sisa ruang */
-    text-align: grid; /* Teks di tengah */
+    text-align: center; /* Teks di tengah */
     padding: 0 15px; /* Jarak horizontal */
 }
 
 .input-container {
     display: flex; /* Atur tombol dan input dalam baris */
-    align-items: grid; /* Posisi vertikal yang sejajar */
+    align-items: center; /* Posisi vertikal yang sejajar */
     gap: 5px; /* Jarak antar tombol dan input */
 }
 
 
 .input-container button {
-    background-color: #ff0000; /* Warna hijau untuk tombol */
+    background-color: #4CAF50; /* Warna hijau untuk tombol */
     color: white;
     padding: 8px 12px; /* Ukuran padding lebih besar */
     border: none;
     border-radius: 6px; /* Sudut lebih melengkung */
     cursor: pointer;
-    font-size: 20px; /* Ukuran font lebih besar */
+    font-size: 18px; /* Ukuran font lebih besar */
     transition: background-color 0.3s; /* Transisi warna saat hover */
 }
 
@@ -178,7 +164,7 @@ menu-item {
     width: 60px; /* Lebar khusus untuk input nomor */
     margin: 0 5px; /* Jarak antara tombol dan input */
     text-align: center; /* Untuk menempatkan angka di tengah */
-    border: 2px solid #ff0000; /* Border hijau untuk input jumlah */
+    border: 2px solid #4CAF50; /* Border hijau untuk input jumlah */
     border-radius: 4px; /* Sudut lebih melengkung */
     font-size: 16px; /* Ukuran font */
     padding: 5px; /* Padding untuk input */
@@ -192,7 +178,7 @@ menu-item {
 }
 
 .logout-container button {
-    background-color: #ff0000; /* Warna hijau untuk tombol logout */
+    background-color: #45a049; /* Warna hijau untuk tombol logout */
     color: white;
     padding: 8px 12px;
     border: none;
@@ -202,5 +188,5 @@ menu-item {
 }
 
 .logout-container button:hover {
-    background-color: #ff0000; /* Warna lebih gelap saat dihover */
+    background-color: #0e4d11; /* Warna lebih gelap saat dihover */
 }
