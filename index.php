@@ -61,7 +61,7 @@ $loggedIn = isset($_SESSION['username']);
             <div class="menu-item">
                 <img src="gambar/mie_goreng.jpg" alt="Mie Goreng">
                 <h3>Mie Goreng</h3>
-                <p>Rp 12,000</p>
+                <p>Rp 15,000</p>
             </div>
             <div class="menu-item">
                 <img src="gambar/ayam_penyet.jpg" alt="Ayam Penyet">
