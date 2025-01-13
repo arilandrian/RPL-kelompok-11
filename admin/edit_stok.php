@@ -1,6 +1,6 @@
 <?php
 // Koneksi ke database
-include 'connection/koneksi.php'; // Pastikan path ini benar
+include '../connection/koneksi.php'; // Pastikan path ini benar
 
 // Cek apakah ada ID yang diberikan
 $id_masakan = isset($_GET['id']) ? $_GET['id'] : null;
@@ -41,7 +41,7 @@ if (isset($_POST['update'])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Responsif untuk perangkat mobile -->
     <title><?= $id_masakan ? "Edit" : "Tambah" ?> Stok</title>
-    <link rel="stylesheet" href="css/edit.css"> <!-- Menghubungkan file CSS -->
+    <link rel="stylesheet" href="../css/edit.css"> <!-- Menghubungkan file CSS -->
 </head>
 <body>
     <h1><?= $id_masakan ? "Edit" : "Tambah" ?> Menu</h1>
