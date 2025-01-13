@@ -130,9 +130,9 @@ h3 {
     display: flex; /* Atur item menu dalam baris */
     align-items: center; /* Posisi vertikal yang sejajar */
     padding: 15px; /* Jarak dalam item menu */
-    border: 1px solid hsl(0, 78%, 46%); /* Batas item menu */
+    border: 1px solid #ddd; /* Batas item menu */
     border-radius: 15px; /* Sudut melengkung */
-    background-color: hwb(0 8% 19%); /* Warna latar belakang */
+    background-color: #fafafa; /* Warna latar belakang */
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
@@ -150,7 +150,7 @@ h3 {
 
 
 .input-container button {
-    background-color: #4CAF50; /* Warna hijau untuk tombol */
+    background-color: #624caf; /* Warna hijau untuk tombol */
     color: white;
     padding: 8px 12px; /* Ukuran padding lebih besar */
     border: none;
