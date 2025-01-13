@@ -1,10 +1,10 @@
 <?php
 session_start();
-include 'connection/koneksi.php'; // Pastikan koneksi database sudah benar
+include '../connection/koneksi.php'; // Pastikan koneksi database sudah benar
 
 // Cek apakah pengguna sudah login sebagai admin
 if (!isset($_SESSION['id_user']) || $_SESSION['username'] !== 'admin') {
-    header("Location: login.php"); // Arahkan ke halaman login jika belum login
+    header("Location: ../login.php"); // Arahkan ke halaman login jika belum login
     exit();
 }
 
@@ -59,7 +59,7 @@ $result_transaksi = $koneksi->query($query_transaksi);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Riwayat Transaksi</title>
-    <link rel="stylesheet" href="css/admin.css"> <!-- Sesuaikan dengan file CSS yang ada -->
+    <link rel="stylesheet" href="../css/admin.css"> <!-- Sesuaikan dengan file CSS yang ada -->
 </head>
 <body>
     <div class="admin-container">
